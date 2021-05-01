@@ -23,6 +23,7 @@ args = parser.parse_args()
 if not os.path.exists(args.save_dir):
     os.makedirs(args.save_dir)
 
+save_path = args.save_dir
 # Create data loader
 test_data = SDataset(args.data)
 print(f'data loaded from {args.data}')
