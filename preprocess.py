@@ -35,7 +35,11 @@ parser.add_argument('--save_dir', type=str, default='./processed/', help='path t
 parser.add_argument('--N', type=float, default=10.0, help='normalization constant')
 parser.add_argument('--window_size', type=int, default=10, help='window size')
 parser.add_argument('--split', type=int, default=0.8, help='percent of data for training set')
+parser.add_argument('--seed', type=int, default=42, help='seed for creating the train/test split')
 args = parser.parse_args()
+
+# set np.random seed
+np.random.seed(args.seed)
 
 # create save dir if it does not exist
 if not os.path.exists(args.save_dir):
